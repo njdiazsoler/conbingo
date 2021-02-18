@@ -1,3 +1,6 @@
+# conbingo
+Bingo card generator for videogame conferences! Also custom option is available
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
