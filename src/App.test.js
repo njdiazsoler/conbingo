@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+
+test('Generate button is present and working', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const buttonElement = screen.getByRole(/GenerateButton/i);
+  expect(buttonElement).toBeInTheDocument();
+  fireEvent.click(buttonElement);
+  const textElement = screen.getByText('Button clicked!')
+  expect(textElement).toBeInTheDocument();
 });
