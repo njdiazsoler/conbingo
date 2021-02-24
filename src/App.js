@@ -6,9 +6,10 @@ import * as htmlToImage from "html-to-image";
 import { saveAs } from "file-saver";
 import {
   Button,
-  Card,
   Image as BootstrapImage,
 } from "react-bootstrap";
+import BingoCard from "./components/BingoCard";
+import parsingUtils from "./utils/parsing";
 
 const App = () => {
   const defaultItems = new Array(25).fill(false);
@@ -16,7 +17,7 @@ const App = () => {
 
   const handleGenerateClick = () => {
     // const newTable = new Array(25).fill().map(() => Math.floor(Math.random() * 10))
-    const newTable = shuffle(
+    const newTable = parsingUtils.shuffle(
       new Array(25)
         .fill()
         .map((el, ix) => data.blizzard[ix])
@@ -38,73 +39,33 @@ const App = () => {
     }
   };
 
-  const shuffle = (list) => {
-    let currentIndex = list.length,
-      temporaryValue,
-      randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-      // Pick a remaining element...
-      randomIndex = Math.floor(
-        Math.random() * currentIndex
-      );
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = list[currentIndex];
-      list[currentIndex] = list[randomIndex];
-      list[randomIndex] = temporaryValue;
-    }
-
-    return list;
-  };
-
   return (
     <div className="App">
       <div id="main-app">
-        <header className="App-header">
+        <header className="App-header" data-testid="page-header">
           <div className="flex">
             <BootstrapImage
               className="custom-img"
               fluid
               src={image}
-              squared
+              role="header-image"
             />
           </div>
         </header>
-        <div className="container">
-          <div
-            className="align-content-center container d-flex flex-row flex-wrap justify-content-center"
-            style={{
-              height: "80vh",
-            }}
-          >
-            {items.map((item, index) => {
-              return (
-                <Card
-                  className="border-dark custom-card m-1 text-body"
-                  key={index}
-                >
-                  <Card.Body style={{ padding: ".5rem" }}>
-                    {item}
-                  </Card.Body>
-                </Card>
-              );
-            })}
-          </div>
+        <div className="container" data-testid="card-container">
+          <BingoCard items={items} />
         </div>
       </div>
       <div>
         <Button
-          role="generateButton"
+          role="generate-button"
           onClick={handleGenerateClick}
         >
           Generate!
         </Button>
         <Button
-          disabled={items.every(item => !item)}
-          role="saveImageButton"
+          disabled={items.every((item) => !item)}
+          role="download-button"
           onClick={() => createDownloadFile()}
         >
           Download!
