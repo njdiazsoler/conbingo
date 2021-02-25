@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 
-const BingoCard = (props) => {
+const BingoGrid = (props) => {
   const { items } = props;
   return (
     <div
@@ -26,4 +26,4 @@ const BingoCard = (props) => {
   );
 };
 
-export default BingoCard;
+export default BingoGrid;
