@@ -14,11 +14,9 @@ const BingoCard = props => {
   const defaultItems = new Array(25).fill(false);
   const [items, setItems] = useState(defaultItems);
   const { imagePath, options } = props.data;
-  console.log('bingocard props', props)
 
   const handleGenerateClick = () => {
     // const newTable = new Array(25).fill().map(() => Math.floor(Math.random() * 10))
-    console.log('options on click are', options)
     const newTable = parsingUtils.shuffle(
       new Array(25)
         .fill()
