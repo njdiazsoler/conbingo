@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/conbingo/static/css/main.acae3dac.chunk.css",
-    "main.js": "/conbingo/static/js/main.e23f7a72.chunk.js",
-    "main.js.map": "/conbingo/static/js/main.e23f7a72.chunk.js.map",
+    "main.js": "/conbingo/static/js/main.558775b9.chunk.js",
+    "main.js.map": "/conbingo/static/js/main.558775b9.chunk.js.map",
     "runtime-main.js": "/conbingo/static/js/runtime-main.e8bbf0d1.js",
     "runtime-main.js.map": "/conbingo/static/js/runtime-main.e8bbf0d1.js.map",
     "static/css/2.150d169a.chunk.css": "/conbingo/static/css/2.150d169a.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.30d3d1dc.chunk.js",
     "static/css/main.acae3dac.chunk.css",
-    "static/js/main.e23f7a72.chunk.js"
+    "static/js/main.558775b9.chunk.js"
   ]
 }
